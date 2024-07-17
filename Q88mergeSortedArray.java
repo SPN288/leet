@@ -1,22 +1,34 @@
 
-
 public class Q88mergeSortedArray {
+
     public static void merge(int[] nums1, int m, int[] nums2, int n) {
-        int i = m - 1;     // nums1's index (the actual nums)
-        int j = n - 1;     // nums2's index
-        int k = m + n - 1; // nums1's index (the next filled position)
-    
-        while (j >= 0)
-          if (i >= 0 && nums1[i] > nums2[j])
-            nums1[k--] = nums1[i--];
-          else
-            nums1[k--] = nums2[j--];
-      }
-      public static void main(String[] args) {
-        int[] nums1 = {1,2,3,0,0,0};
-        int[] nums2 = {2,5,6};
-        int m = 3,n = 3;
+        int j = 0, k = 0;
+        int[] arr = new int[nums1.length];
+        for (int i = 0; i < arr.length; i++) {
+            if (nums1[j] == 0) {
+                arr[i] = nums2[k];
+                j++;
+                k++;
+            } else if (nums1[j] <= nums2[k]) {
+                arr[i] = nums1[j];
+                j++;
+            } else {
+                arr[i] = nums2[k];
+                k++;
+            }
+        }
+        for (int l = 0; l < arr.length; l++) {
+            nums1[l]=arr[l];
+            System.out.print(nums1[l]+"");
+        }
+
+    }
+
+    public static void main(String[] args) {
+        int[] nums1 = {0};
+        int[] nums2 = {1};
+        int m = 3, n = 3;
         merge(nums1, m, nums2, n);
-        
-      }
+
+    }
 }
