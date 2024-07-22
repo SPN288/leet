@@ -1,4 +1,6 @@
+
 public class Q24SwapNodesinpairs {
+
     public static class ListNode {
 
         int val;
@@ -16,31 +18,57 @@ public class Q24SwapNodesinpairs {
             this.next = next;
         }
     }
-    public static  ListNode swapPairs(ListNode head) {
-        final int length = getLength(head);
-        ListNode dummy = new ListNode(0, head);
-        ListNode prev = dummy;
-        ListNode curr = head;
+
     
-        for (int i = 0; i < length / 2; ++i) {
-          ListNode next = curr.next;
-          curr.next = next.next;
-          next.next = curr;
-          prev.next = next;
-          prev = curr;
-          curr = curr.next;
+    public static ListNode swapPairs(ListNode head) {
+
+        if (head == null || head.next == null) {
+            return head;
         }
-    
-        return dummy.next;
-      }
-    
-      private static int getLength(ListNode head) {
-        int length = 0;
-        for (ListNode curr = head; curr != null; curr = curr.next)
-          ++length;
-        return length;
-      }
-      public static void printer(ListNode l) {
+        if (head.next.next == null) {
+            ListNode temp = head;
+            head = head.next;
+            head.next = temp;
+            temp.next = null;
+            return head;
+        }
+        if (head.next.next.next == null) {
+            ListNode temp = head;
+            ListNode se = head.next;
+            head = se;
+            temp.next = se.next;
+            se.next = temp;
+            return head;
+        }
+        ListNode prev;
+        ListNode curr = head;
+        ListNode nextNode = curr.next;
+        head = nextNode;
+
+        curr.next = nextNode.next;
+        nextNode.next = curr;
+        prev = curr;
+        curr = prev.next;
+        nextNode = curr.next;
+
+        while (prev.next != null) {
+            curr.next = nextNode.next;
+            nextNode.next = curr;
+            prev.next = nextNode;
+            prev = curr;
+            if (prev.next == null) {
+                return head;
+            }
+            curr = prev.next;
+            if (curr.next == null) {
+                return head;
+            }
+            nextNode = curr.next;
+        }
+        return head;
+    }
+
+    public static void printer(ListNode l) {
         ListNode temp = l;
         while (temp != null) {
             System.out.print(temp.val + " ");
@@ -48,31 +76,28 @@ public class Q24SwapNodesinpairs {
         }
     }
 
-
     public static void main(String[] args) {
 
         ListNode p1 = new ListNode(1);
-        ListNode p11 = new ListNode(2);
-        ListNode p12 = new ListNode(4);
-        ListNode x = new ListNode(5);
+        ListNode p2 = new ListNode(2);
+        ListNode p3 = new ListNode(3);
+        ListNode p4 = new ListNode(4);
 
-        ListNode p13 = new ListNode(1);
-        ListNode p14 = new ListNode(3);
-        ListNode p15 = new ListNode(4);
-        ListNode z = new ListNode(8);
-        p1.next = p11;
-        p11.next = p12;
-        p12.next = x;
-        x.next=p13;
-        p13.next = p14;
-        p14.next = p15;
-        p15.next = z;
+        ListNode p5 = new ListNode(5);
+        ListNode p6 = new ListNode(6);
+        ListNode p7 = new ListNode(7);
+        ListNode p8 = new ListNode(8);
+        p1.next = p2;
+        p2.next = p3;
+        p3.next = p4;
+        p4.next = p5;
+        p5.next = p6;
+        p6.next = p7;
+        p7.next = p8;
         printer(p1);
         System.out.println();
-        
-        printer(p13);
+        printer(swapPairs(p1));
         System.out.println();
-        
 
     }
 }
