@@ -8,7 +8,6 @@ public class Q354ReverseVowels {
         StringBuilder vov = new StringBuilder();
 
         HashMap <Character,Character> l = new HashMap<>();
-        // List<Character> l = new ArrayList<>();
         l.put('a','a');
         l.put('e','e');
         l.put('i','i');
