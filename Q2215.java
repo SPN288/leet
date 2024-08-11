@@ -12,4 +12,7 @@ public class Q2215 {
     Arrays.stream(nums2).forEach(set1::remove);
     return Arrays.asList(new ArrayList<>(set1), new ArrayList<>(set2));
   }
+  public static void main(String[] args) {
+    
+  }
 }
