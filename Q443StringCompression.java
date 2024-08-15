@@ -65,9 +65,9 @@ public class Q443StringCompression {
                     else if(count<10){
                         chars[ans]=(chars[i-1]);
                         ans++;
-                        String p=String.valueOf(count);
-                        chars[ans]=(p.charAt(0));
-                        
+                        // String p=String.valueOf(count);
+                        // chars[ans]=(p.charAt(0));
+                        chars[ans]=(char)(count+'0');
                         ans++;
                         count=1;
                     }
@@ -102,13 +102,11 @@ public class Q443StringCompression {
 
     }
     public static void main(String[] args) {
-        // char[] arr={'x','a','a','a','a','a','a','a','b','b','b','b','b','b','b','b','b','b','z','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','c','c','y','y'};
-        // System.out.println(compress(arr));
-        //  char[] arr2={'a','b'};
-        //  System.out.println(compress(arr2));
-        int x=10;
-        char y=(char)(x+'0');
-        System.out.println(y);
+        char[] arr={'x','a','a','a','a','a','a','a','b','b','b','b','b','b','b','b','b','b','z','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','b','c','c','y','y'};
+        System.out.println(compress(arr));
+         char[] arr2={'a','b'};
+         System.out.println(compress(arr2));
+        
         
     }
 }
