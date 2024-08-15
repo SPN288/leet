@@ -12,6 +12,7 @@ public class Q860Lemonadechange {
                 if (five > 0) {
                     ten++;
                     five--;
+                    continue;
                 } else {
                     return false;
                 }
@@ -20,8 +21,10 @@ public class Q860Lemonadechange {
                 if (five > 0 && ten > 0) {
                     five--;
                     ten--;
+                    
                 } else if(five>=3){
                     five-=3;
+                    
                 }else{return false;}
             }
         }
