@@ -77,6 +77,14 @@ public class Q624MaximumDistanceinArray {
         ll.add(l2);
         ll.add(l3);
         System.out.println(maxDistance(ll));
+        List<List<Integer>> ll2 = new ArrayList<>();
+        List<Integer> l4 = new ArrayList<>();
+        List<Integer> l5 = new ArrayList<>();
+        l4.add(1);
+        l5.add(1);
+        ll2.add(l4);
+        ll2.add(l5);
+        System.out.println(maxDistance(ll2));
     }
 
 }
