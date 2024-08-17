@@ -7,6 +7,7 @@ public class Q860Lemonadechange {
         for (int i = 0; i < bills.length; i++) {
             if (bills[i] == 5) {
                 five++;
+                continue;
             }
             if (bills[i] == 10) {
                 if (five > 0) {
