@@ -1,42 +1,5 @@
 public class Q11ContainerWithMostWater {
     
-
-    // public static int maxArea(int[] height) {
-    //     int s=height.length;
-    //     if(s==0||s==1){return 0;}
-    //     int ans=0;
-    //     int n=0;
-    //     for (int i = 0; i <s; i++) {
-    //         for(int j=0;j<s;j++){
-    //             int w=Math.min(height[i], height[j])*(j-i);
-    //             if(w>ans){ans=w;}
-    //         }
-    //     }
-    //     return ans;
-    // }
-
-    // public static int maxArea(int[] height) {
-    //     int s=height.length;
-    //     if(s==0||s==1){return 0;}
-    //     int ans=0;
-    //     int i;
-    //     int j=s-1;
-    //     int maxf=0;
-    //     int maxr=j;
-    //     for ( i = 0; i < s;i++) {
-    //         if(height[i]>height[maxf]){
-    //             maxf=i;
-    //         }
-    //         if(height[j]>height[maxr]){
-    //             maxr=j;
-    //         }
-    //         int w=Math.min(height[maxf], height[maxr])*(maxr-maxf);
-    //              if(w>ans){ans=w;}
-    //             j--;
-    //     }
-    //     return ans;
-    // }
-    
         public static  int maxArea(int[] height) {
           int ans = 0;
           int l = 0;
