@@ -105,6 +105,9 @@ public class Q264UglyNo {
     }
     public static void main(String[] args) {
         System.out.println(nthUglyNumber(124));
-        //System.out.println(isPrime(4));
+        System.out.println(nthUglyNumber(10));
+        System.out.println(nthUglyNumber(5));
+        System.out.println(nthUglyNumber(2));
+        
     }
 }
