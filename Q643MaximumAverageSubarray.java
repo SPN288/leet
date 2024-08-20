@@ -39,7 +39,7 @@ public class Q643MaximumAverageSubarray {
     public static void main(String[] args) {
         int[] arr = {4, 0, 4, 3, 3};
         int[] arr2 = {9, 7, 3, 5, 6, 2, 0, 8, 1, 9};
-        //System.out.println(findMaxAverage(arr, 5));
+        System.out.println(findMaxAverage(arr, 5));
         System.out.println(findMaxAverage(arr2, 6));
     }
 
