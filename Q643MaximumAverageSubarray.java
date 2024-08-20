@@ -15,19 +15,14 @@ public class Q643MaximumAverageSubarray {
     public static double findMaxAverage(int[] nums, int k) {
         int l=nums.length;
         if(l==1){return nums[0];}
-        int[]help=new int[l];help[0]=nums[0];
         int i;
         for ( i = 1; i <l; i++) {
-            help[i]=help[i-1]+nums[i];
-            //System.out.print(" "+help[i]);
+            nums[i]=nums[i-1]+nums[i];
         }
-        System.out.println();
-        if(k==l){return (double)help[l-1]/k;}
-        double max=help[k-1];
-        for(i=k;i<l;i++){
-            int res=help[i]-help[i-k];
-            if(res>max){
-                max=res;
+        double max=nums[k-1];
+        for(i=k;i<l;i++){     
+            if(nums[i]-nums[i-k]>max){
+                max=nums[i]-nums[i-k];
             }
         }
         max=max/k;
