@@ -1,8 +1,5 @@
-
 import java.util.*;
-
-public class Q412FizzBuzz {
-
+public class Qcheck {
     public static List<String> fizzBuzz(int n) {
         List<String> ans = new ArrayList<>();
         for (int i = 1; i <= n; i++) {
@@ -22,8 +19,8 @@ public class Q412FizzBuzz {
         }
         return ans;
     }
-
     public static void main(String[] args) {
         System.out.println(fizzBuzz(15));
     }
+
 }
