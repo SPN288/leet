@@ -2,13 +2,20 @@ public class Q189RotateArray {
     static void rotate(int[] nums,int k){
         int l=nums.length;
         if(l==0||l==1){return;}
-        for (int i = 1; i <= k; i++) {
-            int o=nums[l-1];
-            for (int j = l-1; j >0; j--) {
-                nums[j]=nums[j-1];
-            }
-            nums[0]=o;
+        if(k>=l){
+            while(k>l){k=k-l;}
         }
+        int []d=new int[l];
+        int j=0;
+        for (int i = l-k; i <l; i++) {
+            d[j]=nums[i];
+            j++;
+        }
+        for (int i = 0; i < l-k; i++) {
+            d[j]=nums[i];
+            j++;
+        }
+        System.arraycopy(d, 0, nums, 0, nums.length);
     }
 
     static void printer(int [] nums){
