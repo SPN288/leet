@@ -1,16 +1,14 @@
 public class Q189RotateArray {
     static void rotate(int[] nums,int k){
-        int []d=new int[nums.length];
-        int j=0;
-        for (int i = nums.length-k; i < nums.length; i++) {
-            d[j]=nums[i];
-            j++;
+        int l=nums.length;
+        if(l==0||l==1){return;}
+        for (int i = 1; i <= k; i++) {
+            int o=nums[l-1];
+            for (int j = l-1; j >0; j--) {
+                nums[j]=nums[j-1];
+            }
+            nums[0]=o;
         }
-        for (int i = 0; i < nums.length-k; i++) {
-            d[j]=nums[i];
-            j++;
-        }
-        System.arraycopy(d, 0, nums, 0, nums.length);
     }
 
     static void printer(int [] nums){
