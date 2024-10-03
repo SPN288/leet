@@ -20,5 +20,6 @@ public class Q2696MinimumStringLengthAfterRemovingSubstring {
 
     public static void main(String[] args) {
         System.out.println(minLength("ABFCACDB"));//2
+        System.out.println(minLength("ACBBD"));
     }
 }
