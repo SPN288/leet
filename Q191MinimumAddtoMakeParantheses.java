@@ -12,4 +12,7 @@ public class Q191MinimumAddtoMakeParantheses {
         }
         return(o+c);
     }
+    public static void main(String[] args) {
+        
+    }
 }
