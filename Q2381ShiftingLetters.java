@@ -7,28 +7,14 @@ public class Q2381ShiftingLetters {
         
         for (int i = 0; i < shifts.length; i++) {
             for (int j = shifts[i][0]; j <=shifts[i][1]; j++) {
-                char x=sb.charAt(j);
+                //char x=sb.charAt(j);
                 if(shifts[i][2]==0){
-                    if(x=='a'){
-                        
-                        sb.setCharAt(j, 'z');
-                    }else{
-                        x--;
-                        
-                        sb.setCharAt(j, x);
-                    }
+                    
                 }else{
-                    if(x=='z'){
-                        
-                        sb.setCharAt(j, 'a');
-                    }else{
-                        x++;
-                        
-                        sb.setCharAt(j, x);
-                    }
+                    
                 }
             }
-            //System.out.println(sb);
+            System.out.println(sb);
         }
 
         return sb.toString();
