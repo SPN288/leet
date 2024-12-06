@@ -28,4 +28,9 @@ public class Q2056Formsmallestnumber {
          i=i+Math.max(min2,min);
         return Math.min(i,min3);
     }
+    public static void main(String[] args) {
+        int[] nums1 = {4,1,3};
+        int[] nums2 = {5,7};
+        System.out.println(minNumber(nums1, nums2));
+    }
 }
