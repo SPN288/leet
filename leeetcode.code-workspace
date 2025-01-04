@@ -5,7 +5,12 @@
 		},
 		{
 			"path": "../APractice"
+		},
+		{
+			"path": "../port - Copy"
 		}
 	],
-	"settings": {}
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "port - Copy"
+	}
 }
