@@ -7,19 +7,17 @@ public class Q2559CountVovelString {
      * @return
      */
     public static int[] vowelStrings(String[] words, int[][] queries) {
-        int l=words.length;
         int [] ans=new int[queries.length];
-        int [] help =new int[l+1];
+        int [] help =new int[words.length+1];
         HashMap <Character,Character> hm=new HashMap<>();
         hm.put('a','a');
         hm.put('e','e');
         hm.put('i','i');
         hm.put('o','o');
         hm.put('u','u');
-
-        int i ;
+         int i ;
         help[0]=0;
-        for (i=0; i < l; i++) {
+        for (i=0; i < words.length; i++) {
             if(hm.containsKey(words[i].charAt(0))&& hm.containsKey(words[i].charAt(words[i].length()-1))){
                 help[i+1]=1;
             }else{
@@ -27,18 +25,12 @@ public class Q2559CountVovelString {
             }
             help[i+1]=help[i]+help[i+1];
         }
-
-        // for (i=1; i <help.length; i++) {
-        //     help[i]=help[i-1]+help[i];
-        // }
         for (i = 0; i < queries.length; i++) {
             
             ans[i]=help[1+queries[i][1]]-help[queries[i][0]];
         }
 
-
         return ans;
-
     }
     public static void arrayprinter(int[]arr){
         System.out.print('[');
